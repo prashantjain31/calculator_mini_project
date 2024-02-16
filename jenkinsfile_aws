@@ -20,6 +20,7 @@ pipeline {
             steps {
                 script {
                     // Test the code
+                    sh 'chmod 600 ./calculator_miniproject.pem'
                     sh 'mvn test'
                 }
             }
@@ -61,7 +62,7 @@ pipeline {
                         ansiblePlaybook(
                             playbook: 'deploy_aws.yml',
                             inventory: 'inventory_aws',
-                            extras: "-e ansible_ssh_private_key_file=${SSH_KEY} -vvv"
+                            extras: "-e ansible_ssh_private_key_file=./calculator_miniproject.pem -vvv"
                         )
                     }
                 }
