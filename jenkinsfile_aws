@@ -58,6 +58,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'calculator_aws', keyFileVariable: 'SSH_KEY')]) {
+                        echo "Running ansible-playbook deploy.yml -i inventory -e ansible_ssh_private_key_file=${SSH_KEY}"
                         ansiblePlaybook(
                             playbook: 'deploy_aws.yml',
                             inventory: 'inventory_aws',
