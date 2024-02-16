@@ -1,8 +1,7 @@
 ---
 - name: Pull Docker Image from Docker Hub
-  hosts: localhost
-  remote_user: prashantjain
-  become: false
+  hosts: all
+  become: true
   tasks:
     - name: Pull Docker Image
       docker_image:
@@ -19,4 +18,4 @@
         name: docker
         state: started
     - name: Running container
-      shell: docker run -it -d --name calculator prashantjain31/calculator
+      shell: sudo docker run -it -d --name calculator prashantjain31/calculator
