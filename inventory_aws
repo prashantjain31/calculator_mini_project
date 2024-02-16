@@ -1,3 +1,2 @@
 [ec2]
-44.201.87.144
-# ansible_ssh_common_args = '-o StrictHostKeyChecking=no'
+44.201.87.144 ansible_user=ec2-user
