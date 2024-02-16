@@ -16,6 +16,24 @@ pipeline {
             }
         }
 
+        stage('Testing') {
+            steps {
+                script {
+                    // Test the code
+                    sh 'mvn test'
+                }
+            }
+        }
+
+        stage('Building Project JAR') {
+            steps {
+                script {
+                    // Building the project JAR file
+                    sh 'mvn clean install'
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
