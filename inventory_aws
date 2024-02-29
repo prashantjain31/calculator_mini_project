@@ -1,2 +1,2 @@
 [ec2]
-54.197.73.185 ansible_connection=ssh ansible_user=ec2-user
+3.81.234.125 ansible_connection=ssh ansible_user=ec2-user
