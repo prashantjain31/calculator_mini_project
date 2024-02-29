@@ -58,7 +58,7 @@ pipeline {
    stage('Run Ansible Playbook') {
             steps {
                 script {
-                    //withCredentials([sshUserPrivateKey(credentialsId: 'calculator_aws', keyFileVariable: 'SSH_KEY')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'calculator_aws', keyFileVariable: 'SSH_KEY')]) {
                         ansiblePlaybook(
                             playbook: 'deploy_aws.yml',
                             inventory: 'inventory_aws',
